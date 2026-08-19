@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+        @layer base {
+            html, body { margin: 0; padding: 0; }
+            body { overscroll-behavior: none; }
+            main > :first-child { margin-top: 0 !important; }
+            main > :last-child { margin-bottom: 0 !important; }
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e2e2e2", "surface-variant": "#e2e2e2", "on-tertiary-container": "#4a4532", "surface-container-high": "#e8e8e8", "on-primary-fixed-variant": "#574500", "tertiary": "#645e49", "secondary-fixed-dim": "#c8c6c5", "tertiary-fixed-dim": "#cec6ad", "primary": "#735c00", "surface-bright": "#f9f9f9", "outline-variant": "#d0c5af", "surface": "#f9f9f9", "surface-container": "#eeeeee", "tertiary-fixed": "#ebe2c8", "on-surface": "#1a1c1c", "error": "#ba1a1a", "on-primary-fixed": "#241a00", "on-surface-variant": "#4d4635", "inverse-surface": "#2f3131", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-background": "#1a1c1c", "on-secondary-fixed": "#1c1b1b", "outline": "#7f7663", "secondary-fixed": "#e5e2e1", "primary-fixed-dim": "#e9c349", "surface-tint": "#735c00", "inverse-on-surface": "#f0f1f1", "on-error-container": "#93000a", "secondary": "#5f5e5e", "surface-container-low": "#f3f3f3", "on-tertiary-fixed-variant": "#4c4733", "surface-dim": "#dadada", "background": "#f9f9f9", "error-container": "#ffdad6", "tertiary-container": "#bbb39a", "on-error": "#ffffff", "inverse-primary": "#e9c349", "on-secondary-container": "#636262", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "on-primary-container": "#554300", "on-tertiary-fixed": "#1f1c0b", "secondary-container": "#e2dfde", "on-secondary-fixed-variant": "#474746", "primary-fixed": "#ffe088", "primary-container": "#d4af37"
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    "spacing": { "gutter": "24px", "margin-mobile": "16px", "unit": "8px", "container-max": "1280px", "margin-desktop": "40px" },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Montserrat"], "title-md": ["Montserrat"], "label-caps": ["Montserrat"], "display-lg": ["Montserrat"], "body-sm": ["Montserrat"], "body-lg": ["Montserrat"], "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-background font-body-lg text-on-surface">
+    <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-primary/10">
+        <div class="h-16 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img alt="PP PHONE Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHSzGfCVo-9Oy52G6MNsyQ2k-GZQFHjj1fR27fzuuF3aYEEIuHqTeEvHmBhByjW1tiR0a50htMnsWlJLFISuYNmkBkDVakRGAO95ufeodW8S4kpLQuzDWsKE_yhBRQEjK9RopAIDnwDmPx-LNmOEv7qBQp4lFMCxRGWeco2qXXcW9g5R80jecT1jK1QEzqCkFHp7bkef_TOv5khBKJQ9wSxO-tLf3JqjEMCy2t9k4yeOqEmMrUj6qKzLNktUWbfo-h">
+                <span class="font-headline-lg text-headline-lg tracking-tight text-primary">PP PHONE</span>
+            </div>
+            
+            <!-- Navbar หลัก (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 h-full" data-active-classes="text-primary font-bold border-b-2 border-primary">
+                <a class="h-full flex items-center text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="index.html">สินค้า</a>
+                <a aria-current="page" class="h-full flex items-center transition-colors text-primary font-bold border-b-2 border-primary" data-path="order-history" href="orderhistory.html">ประวัติการสั่งซื้อ</a>
+                <a class="h-full flex items-center text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="inventory-management" href="InventoryControl.html">จัดการสินค้า</a>
+                <a class="h-full flex items-center text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="sales-report" href="salesreport.html">รายงานยอดขาย</a>
+            </nav>
 
+            <div class="flex items-center gap-4">
+                <div class="group relative cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-md">
+                        <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+                    </div>
+                    <div class="absolute right-0 top-full mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 border border-outline-variant">
+                        <a class="block px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-high transition-colors" data-path="profile" href="#">บัญชีของฉัน</a>
+                        <div class="h-[1px] bg-outline-variant my-1"></div>
+                        <a class="block px-4 py-2 text-body-sm text-error hover:bg-error-container transition-colors" data-path="logout" href="#">ออกจากระบบ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full pt-16 pb-24 lg:pb-0 bg-background">
+        <div class="flex flex-col w-full max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop py-8 gap-8">
+            <div class="flex flex-col gap-2">
+                <h1 class="font-display-lg text-display-lg text-on-surface">ประวัติการสั่งซื้อ</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">ดูประวัติและสถานะการสั่งซื้อทั้งหมด</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-4 items-center justify-between bg-surface-container-low p-4 rounded-xl">
+                <div class="flex gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0 hide-scrollbar">
+                    <button class="px-6 py-2 rounded-full bg-primary text-on-primary font-title-md text-title-md whitespace-nowrap shadow-sm transition-all hover:opacity-90">ทั้งหมด</button>
+                    <button class="px-6 py-2 rounded-full bg-surface text-on-surface-variant font-title-md text-title-md whitespace-nowrap hover:bg-surface-container transition-colors">รอดำเนินการ</button>
+                    <button class="px-6 py-2 rounded-full bg-surface text-on-surface-variant font-title-md text-title-md whitespace-nowrap hover:bg-surface-container transition-colors">เสร็จสิ้น</button>
+                    <button class="px-6 py-2 rounded-full bg-surface text-on-surface-variant font-title-md text-title-md whitespace-nowrap hover:bg-surface-container transition-colors">ยกเลิกแล้ว</button>
+                </div>
+                <div class="flex gap-4 w-full lg:w-auto">
+                    <div class="relative w-full lg:w-64">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                        <input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface text-body-lg font-body-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" placeholder="ค้นหารหัสคำสั่งซื้อ..." type="text">
+                    </div>
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface text-on-surface-variant hover:bg-surface-container transition-colors whitespace-nowrap">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        <span class="font-body-lg text-body-lg hidden sm:inline">กรองวันที่</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <!-- Order Card 1 (Pending) -->
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden group">
+                    <div class="p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-center gap-6 w-full lg:w-auto">
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">รหัสคำสั่งซื้อ</span>
+                                <span class="font-title-md text-title-md text-on-surface font-mono">ORD-2023-0891</span>
+                            </div>
+                            <div class="h-10 w-px bg-outline-variant hidden lg:block"></div>
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">วันที่</span>
+                                <span class="font-body-lg text-body-lg text-on-surface">24 ต.ค. 2023, 14:30<span class="text-body-sm text-on-surface-variant ml-2">CUS-1024</span></span>
+                            </div>
+                            <div class="h-10 w-px bg-outline-variant hidden lg:block"></div>
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ลูกค้า</span>
+                                <span class="font-body-lg text-body-lg text-on-surface">สมชาย ใจดี<span class="text-body-sm text-on-surface-variant ml-2">CUS-1024</span></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full lg:w-auto gap-8">
+                            <div class="flex flex-col items-end">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ยอดรวม</span>
+                                <span class="font-title-md text-title-md text-primary">฿42,500</span>
+                            </div>
+                            <div class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span>
+                                <span class="font-label-caps text-label-caps">รอดำเนินการ</span>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors transform group-hover:translate-x-1 duration-200">chevron_right</span>
+                        </div>
+                    </div>
+                    <!-- Expandable Details -->
+                    <div class="bg-surface-container-low p-6 border-t border-outline-variant/30 flex flex-col gap-4">
+                        <h4 class="font-title-md text-title-md text-on-surface">รายการสินค้า</h4>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/20 last:border-0">
+                            <div class="flex items-center gap-4">
+                                <img class="w-16 h-16 object-cover rounded-lg shadow-sm" alt="iPhone 15 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJ_r_IbwW2KQyMX9g0lb3bJ9N_DpuIgeKBoTzY_47l16BA9fy1JmurwSvMk9OJ5X4tKXzYwQ6BAzHPmlHKnXk6bWmEANV2NFZ7eiOGyN7mDqrWeBNW1GHCWTxUMgs_5JBuMmK8SAJvIvrCqgb5h9pZ3-Mw4wiCuwZyOjB-v_57GMhJxafT_Y2tsmeFZdE9Z5tDu9_WtDcoci88gViNDmvrP7ltvodMFujWnj632nr3vKwBhtTSm4">
+                                <div class="flex flex-col">
+                                    <span class="font-body-lg text-body-lg text-on-surface font-semibold">iPhone 15 Pro Max 256GB<span class="text-body-sm text-on-surface-variant ml-2">CUS-1024</span><span class="block text-body-sm font-normal text-on-surface-variant mt-1">SKU: PP-IP15PM-256G</span></span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">สี: ดำไทเทเนียม | จำนวน: 1</span>
+                                </div>
+                            </div>
+                            <span class="font-body-lg text-body-lg text-on-surface">฿42,500<span class="text-body-sm text-on-surface-variant ml-2">CUS-1024</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Order Card 2 (Completed) -->
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden group">
+                    <div class="p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-center gap-6 w-full lg:w-auto">
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">รหัสคำสั่งซื้อ</span>
+                                <span class="font-title-md text-title-md text-on-surface font-mono">ORD-2023-0885</span>
+                            </div>
+                            <div class="h-10 w-px bg-outline-variant hidden lg:block"></div>
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">วันที่</span>
+                                <span class="font-body-lg text-body-lg text-on-surface">22 ต.ค. 2023, 09:15<span class="text-body-sm text-on-surface-variant ml-2">CUS-2055</span></span>
+                            </div>
+                            <div class="h-10 w-px bg-outline-variant hidden lg:block"></div>
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ลูกค้า</span>
+                                <span class="font-body-lg text-body-lg text-on-surface">บริษัท เอบีซี จำกัด<span class="text-body-sm text-on-surface-variant ml-2">CUS-2055</span></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full lg:w-auto gap-8">
+                            <div class="flex flex-col items-end">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ยอดรวม</span>
+                                <span class="font-title-md text-title-md text-primary">฿125,000</span>
+                            </div>
+                            <div class="px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                <span class="font-label-caps text-label-caps">เสร็จสิ้น</span>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors transform group-hover:translate-x-1 duration-200">chevron_right</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Order Card 3 (Cancelled) -->
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden group">
+                    <div class="p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-center gap-6 w-full lg:w-auto opacity-75">
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">รหัสคำสั่งซื้อ</span>
+                                <span class="font-title-md text-title-md text-on-surface font-mono line-through">ORD-2023-0870</span>
+                            </div>
+                            <div class="h-10 w-px bg-outline-variant hidden lg:block"></div>
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">วันที่</span>
+                                <span class="font-body-lg text-body-lg text-on-surface">20 ต.ค. 2023, 16:45<span class="text-body-sm text-on-surface-variant ml-2">CUS-0000</span></span>
+                            </div>
+                            <div class="h-10 w-px bg-outline-variant hidden lg:block"></div>
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ลูกค้า</span>
+                                <span class="font-body-lg text-body-lg text-on-surface">นิรนาม<span class="text-body-sm text-on-surface-variant ml-2">CUS-0000</span></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between w-full lg:w-auto gap-8">
+                            <div class="flex flex-col items-end opacity-75">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ยอดรวม</span>
+                                <span class="font-title-md text-title-md text-on-surface-variant">฿8,900</span>
+                            </div>
+                            <div class="px-3 py-1 rounded-full bg-error-container text-on-error-container flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">cancel</span>
+                                <span class="font-label-caps text-label-caps">ยกเลิกแล้ว</span>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors transform group-hover:translate-x-1 duration-200">chevron_right</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-8">
+                <button class="px-8 py-3 rounded-full bg-surface-container-high text-on-surface font-title-md text-title-md hover:bg-surface-container-highest transition-colors shadow-sm">
+                    โหลดเพิ่มเติม
+                </button>
+            </div>
+        </div>
+        <style>
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+    </main>
+
+    <!-- Bottom Nav (Mobile) -->
+    <nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-primary/20 shadow-[0_-4px_16px_rgba(0,0,0,0.05)] md:hidden z-50 flex items-center justify-around" data-active-classes="text-primary">
+        <a aria-current="page" class="flex flex-col items-center justify-center gap-1 text-primary" data-path="order-history" href="orderhistory.html">
+            <span class="material-symbols-outlined">history</span>
+            <span class="text-[10px] font-bold">ประวัติ</span>
+        </a>
+        <a class="relative flex flex-col items-center justify-center gap-1 text-on-surface-variant" data-path="cart" href="#">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="absolute top-0 right-0 -mt-1 -mr-1 w-4 h-4 bg-primary text-on-primary text-[10px] rounded-full flex items-center justify-center font-bold">3</span>
+            <span class="text-[10px] font-bold">ตะกร้า</span>
+        </a>
+        <a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant" data-path="profile" href="#">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span class="text-[10px] font-bold">บัญชี</span>
+        </a>
+    </nav>
+</body>
+</html>
